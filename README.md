@@ -65,4 +65,11 @@ erDiagram
         decimal costo
     }
 
+```
+El diseño propuesto cumple con las formas normales de la siguiente manera:
 
+Primera Forma Normal (1NF): Todos los atributos (columnas) son atómicos y no hay grupos repetidos. Por ejemplo, en lugar de guardar múltiples tratamientos separados por comas en la tabla Citas, se creó una tabla detalle separada (Citas_Tratamientos). Cada tabla tiene una llave primaria única.
+
+Segunda Forma Normal (2NF): Cumple con la 1NF. Todos los atributos que no son llave primaria dependen completamente de la llave primaria en su totalidad. Esto es evidente en Citas_Tratamientos, donde los atributos dosis y costo dependen de la combinación completa de la cita y el tratamiento.
+
+Tercera Forma Normal (3NF): Cumple con la 2NF. No existen dependencias transitivas entre los atributos que no son llave. Por ejemplo, el nombre del dueño depende directamente de id_dueno, no del id_mascota, por lo que está correctamente separado en la tabla Dueños.
